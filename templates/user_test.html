@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- jinja的if else判断 -->
+{% if user.name =="doudou" %}
+it  is myself
+{% else %}
+姓名：{{user.name}}<br/>
+年龄：{{user.age}}
+{% endif %}
+<br/>
+<!-- jinja的for循环 -->
+{% for usermodel in users %}
+--------------{{usermodel.name}}---------------------{{ usermodel.age }} <br/>
+{% endfor %}
+
+<!-- 消息提示,返回的是一个数组 -->
+<br/>
+<h1>{{get_flashed_messages()[0]}}</h1>
+<br/>
+<form action="/login" method="POST">
+    <input type="text" name="username" value="nyc">
+    <input type="text"  name="password" value="111111">
+    <input type="submit" value="提交">
+</form>
+
+
+
